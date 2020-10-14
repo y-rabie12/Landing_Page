@@ -39,12 +39,12 @@ const navList = document.getElementById('navbar__list'); // navlist stores the '
         // Here, once clicked, prevent the default behavior which is scrolling so fast. 
         event.preventDefault();
 
-        // for each section add the scrollIntoView to create smooth scrolling behavior. 
+        // for each section add the scrollIntoView method to create smooth scrolling behavior. 
         section.scrollIntoView({behavior:'smooth'});
     })
 
 })
-// Finally, append the document fraent to the unordered list. 
+// Finally, append the document fragment to the unordered list. 
 navList.appendChild(documentFrag);
 
 
