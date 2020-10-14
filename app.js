@@ -13,20 +13,8 @@ const navList = document.getElementById('navbar__list');
     let ids = "#" + section.getAttribute('id');
     anchorTag.setAttribute('href',ids);
     anchorTag.innerHTML= dataNav;
-       // anchor links with the hash 
-    let anchorSelector = 'a[href^="#"]'; 
-      
-       // Collect all such anchor links 
-    let anchorList =  
-           document.querySelectorAll(anchorSelector); 
-         
-       // Iterate through each of the links 
-       anchorList.forEach(link => { 
-           link.onclick = function (e) { 
-               e.preventDefault(); 
-               section.scrollIntoView({behavior:'smooth'})
-           } 
-       }); 
+    list.addEventListenr
+       
 })
 navList.appendChild(documentFrag);
 
