@@ -73,6 +73,9 @@ section {
 .navbar__menu li {
     display: inline-block;
 }
+.nav__menu a {
+    text-decoration:none;
+}
 
 .navbar__menu .menu__link {
     display: block;
