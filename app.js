@@ -46,12 +46,17 @@ const navList = document.getElementById('navbar__list'); // navlist stores the '
 })
 // Finally, append the document fragment to the unordered list. 
 navList.appendChild(documentFrag);
+/*
+   The second part below is about adding the active class
+   to a section, once it is within the viewport. I've
+   used the Intersection Observer API, which basically
+   keeps track of when the target element enters the viewport. 
+*/
 
+// create a new Instersection
+let observer = new IntersectionObserver(viewPort,[0.1,1.0]);
 
-
-let observer = new IntersectionObserver(isInviewport,[0.1,1.0]);
-
-function isInviewport(entries,observer) 
+function viewPort(entries,observer) 
 {
    
     entries.forEach((entry) =>
