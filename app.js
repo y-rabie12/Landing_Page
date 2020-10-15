@@ -53,26 +53,30 @@ navList.appendChild(documentFrag);
    keeps track of when the target element enters the viewport. 
 */
 
-// create a new Instersection
+/*
+ Call an Intersection Observer constructor and pass the viewport function. 
+ The second parameter is the options parameter where the threshold is defined
+ The threshold basically specifies at what value when the section enters the viewport 
+ should the function be executed. 
+*/
 let observer = new IntersectionObserver(viewPort,[0.1,1.0]);
 
-function viewPort(entries,observer) 
+function viewPort(entries,observer) // takes the entries which is the list of IntersectionObserverEntry objects and the observer. 
 {
-   
+   // loop through the entries list. 
     entries.forEach((entry) =>
     {
         
-        if(entry.isIntersecting)
+        if(entry.isIntersecting) // returns a Boolean value that is true is the section has reached the threshold in relation with the root element in this case the document. 
         {
-            entry.target.classList.add('your-active-class'); 
-         
+            entry.target.classList.add('your-active-class'); // since it is true add the active class. 
         }
-        else if (!(entry.isIntersecting))
+        else if (!(entry.isIntersecting)) // if false remove the active class from the section. 
         {
             entry.target.classList.remove('your-active-class');
         }
     })
 }
 
-sections.forEach(section => {observer.observe(section)});
+sections.forEach(section => {observer.observe(section)}); //observer here uses each section as the target element. 
      
