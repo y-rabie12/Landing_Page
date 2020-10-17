@@ -69,12 +69,15 @@ function viewPort(entries,observer) // takes the entries which is the list of In
         
         if(entry.isIntersecting) // returns a Boolean value that is true is the section has reached the threshold in relation with the root element in this case the document. 
         {
-           let getSections = document.querySelectorAll('section');
+           // To prevent two sections from getting the same class, I've used a for loop on all the sections.
+            let getSections = document.querySelectorAll('section');
             getSections.forEach((section) =>
             {
+                // Inside the loop,, remove the class from all the sections first. 
                 section.classList.remove('your-active-class');
 
             })
+            // Finally, add the class when the section full enters the viewport. 
             entry.target.classList.add('your-active-class'); // since it is true add the active class. 
         }
         else if (!(entry.isIntersecting)) // if false remove the active class from the section. 
